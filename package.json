@@ -1,5 +1,6 @@
 {
     "name": "soona",
+    "version": "0.0.0-development",
     "description": "Yet another tool that optimizes the workflow of releasing multiple packages.",
     "author": "Raohai <surgesoft@gmail.com> (https://github.com/RaoHai)",
     "bin": {
