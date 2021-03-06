@@ -3,6 +3,17 @@
     "version": "0.0.0-development",
     "description": "Yet another tool that optimizes the workflow of releasing multiple packages.",
     "author": "Raohai <surgesoft@gmail.com> (https://github.com/RaoHai)",
+    "ava": {
+        "extensions": [
+            "ts"
+        ],
+        "require": [
+            "ts-node/register"
+        ],
+        "files": [
+            "test/**/*.test.ts"
+        ]
+    },
     "bin": {
         "soona": "bin/soona.js"
     },
@@ -15,5 +26,20 @@
     "main": "index.js",
     "engines": {
         "node": ">=10.18"
+    },
+    "dependencies": {
+        "ava": "^3.15.0",
+        "signale": "^1.4.0",
+        "yargs": "^16.2.0"
+    },
+    "scripts": {
+        "test": "ava"
+    },
+    "devDependencies": {
+        "@types/signale": "^1.4.1",
+        "@types/yargs": "^16.0.0",
+        "stream-buffers": "^3.0.2",
+        "ts-node": "^9.1.1",
+        "typescript": "^4.2.3"
     }
 }
