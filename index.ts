@@ -1,18 +1,19 @@
 'use strict';
-
+import * as stream from 'stream';
 import * as pkg from './package.json';
-import { getLogger } from "./src/logger";
+import { getLogger } from './src/logger';
+import cli from './src/core/cli';
 
-export default async (sonnaOptions = {}, { 
+export default async (argv: string[], {
     cwd = process.cwd(),
     env = process.env,
-    stdout,
-    stderr,
+    stdout = process.stdout,
+    stderr = process.stdin,
 }: {
     cwd?: string;
     env?: NodeJS.ProcessEnv;
-    stdout: NodeJS.WriteStream;
-    stderr: NodeJS.WriteStream;
+    stdout?: stream.Writable;
+    stderr?: stream.Writable;
 }) => {
     const context = {
         cwd, env, stdout, stderr,
@@ -20,4 +21,8 @@ export default async (sonnaOptions = {}, {
     };
 
     context.logger.info(`running ${pkg.name}@${pkg.version}..`);
+    
+    return cli(argv, cwd)
+        .parse(argv);
+        
 }

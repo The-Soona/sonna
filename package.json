@@ -28,6 +28,7 @@
         "node": ">=10.18"
     },
     "dependencies": {
+        "@types/stream-buffers": "3.0.2",
         "signale": "^1.4.0",
         "yargs": "^16.2.0"
     },

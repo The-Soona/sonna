@@ -1,11 +1,7 @@
 import test from 'ava';
-import { WritableStreamBuffer } from 'stream-buffers';
-import runner from '../';
+import { run } from './helper';
 
 test('should run', async t => {
-    await runner({}, {
-        stdout: new WritableStreamBuffer(),
-        stderr: new WritableStreamBuffer(),
-    });
+    await run('sonna help');
     t.pass();
 });
