@@ -1,11 +1,12 @@
 import { WritableStreamBuffer } from 'stream-buffers';
 import runner from '../';
 
-export async function run(command: string) {
+export async function run(command: string, cwd = process.cwd()) {
     const stdout = new WritableStreamBuffer();
 
     await runner(command.split(/\s+/g), {
-        stdout,
+        cwd,
+        stdout: stdout as any,
         stderr: process.stderr,
     });
 

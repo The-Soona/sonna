@@ -29,11 +29,13 @@
     },
     "dependencies": {
         "@types/stream-buffers": "3.0.2",
+        "cosmiconfig": "^7.0.0",
+        "load-json-file": "^6.2.0",
         "signale": "^1.4.0",
         "yargs": "^16.2.0"
     },
     "scripts": {
-        "test": "ava",
+        "test": "ava --verbose",
         "build": "tsc",
         "ci": "npm run build --if-present && npm run test"
     },
